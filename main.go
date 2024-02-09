@@ -7,6 +7,7 @@ import (
 	// "net/http"
 	"os"
 	"strings"
+	"github.com/yutak1026/kawasql/db"
 )
 
 func showTitle() {
@@ -25,6 +26,7 @@ func client() {
 		var err error
 		if strings.HasPrefix(q, "exit") {
 			fmt.Print("quit\n")
+			db.Execute(q)
 		} else {
 			fmt.Print("start SQL command\n")
 		}
